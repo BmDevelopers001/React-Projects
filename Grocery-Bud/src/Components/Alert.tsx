@@ -1,7 +1,23 @@
+import { useEffect } from "react";
+import { itemType } from "../App";
 
-const Alert : React.FC = () => {
+export type Props =  {
+    show: boolean;
+    msg: string;
+    type: string;
+    removeAlert: any;
+    list: itemType[];
+}
+
+const Alert : React.FC<Props> = ({msg,type,removeAlert,list}) => {
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            removeAlert();
+        },3000)
+        return () => clearTimeout(timer);
+    },[list])
     return (
-        <h1>Alert Component</h1>
+        <p className={`alert alert-${type}`}>{msg}</p>
     )
 }
 

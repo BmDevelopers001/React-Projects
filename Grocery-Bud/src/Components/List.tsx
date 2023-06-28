@@ -3,10 +3,11 @@ import { FaEdit, FaTrash } from 'react-icons/fa';
 
 export type listProps = {
     items: itemType[];
+    removeItem: any;
+    editItem: any;
 }
 
-const List : React.FC<listProps> = ({items}) => {
-    console.log(items);
+const List : React.FC<listProps> = ({items,removeItem,editItem}) => {
     
     return (
         <div className="grocery-list">
@@ -16,8 +17,8 @@ const List : React.FC<listProps> = ({items}) => {
                     <article key={id} className="grocery-item">
                         <p className="title">{title}</p>
                         <div className="btn-container">
-                            <button type="button" className="edit-btn"><FaEdit /></button>
-                            <button type="button" className="delete-btn"><FaTrash /></button>
+                            <button type="button" className="edit-btn" onClick={() => editItem(id)}><FaEdit /></button>
+                            <button type="button" className="delete-btn" onClick={() => removeItem(id)}><FaTrash /></button>
                         </div>
                     </article>
                 )

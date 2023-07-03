@@ -5,7 +5,7 @@ const Hero : React.FC = () => {
     const {closeSubmenu}=  useGlobalContext();
     
     return (
-        <section className="hero">
+        <section className="hero" onMouseOver={closeSubmenu}>
             <div className="hero-center">
                 <article className='hero-info'>
                     <h1>Payment infrastructure for the internet</h1>

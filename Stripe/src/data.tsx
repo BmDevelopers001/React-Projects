@@ -1,5 +1,5 @@
 import { FaCreditCard, FaBook, FaBriefcase } from 'react-icons/fa';
-import React, {ReactNode} from 'react';
+import {ReactNode} from 'react';
 
 export type sublinksType = {
     page: string;

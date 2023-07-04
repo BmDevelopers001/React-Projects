@@ -61,6 +61,7 @@ const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
     dispatch({ type: "LOADING" });
     const response = await fetch(url);
     const cart = await response.json();
+    // console.log('cart:', cart)
     dispatch({ type: "DISPLAY_ITEMS", payload: cart });
   };
   const toggleAmount = (id : any, type : any) => {
@@ -68,6 +69,8 @@ const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
   };
   useEffect(() => {
     fetchData();
+    // console.log('check');
+    
   }, []);
 
   useEffect(() => {
